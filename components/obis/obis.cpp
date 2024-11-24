@@ -60,7 +60,7 @@ void OBISComponent::loop() {
       if (this->buf[this->index - 2] == '\r')
         this->buf[this->index - 2] = '\0';
 
-      ESP_LOGVV(TAG, "Received: '%s'", this->buf);
+      ESP_LOGD(TAG, "Received: '%s'", this->buf);
       this->handle_line(this->buf);
 
       this->index = 0;
