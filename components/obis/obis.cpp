@@ -109,7 +109,7 @@ void OBISComponent::handle_line(char *line) {
     ESP_LOGW(TAG, "Format error: Trailing line: '%s'", trailer);
   }
 
-  ESP_LOGV(TAG, "Found field '%s' with value '%s' and unit '%s'", line, value, unit);
+  ESP_LOGV(TAG, "Got field '%s' with value '%s' and unit '%s'", line, value, unit);
 
   for (const auto &channel : this->channels_) {
     if (!channel.first.compare(field)) {
