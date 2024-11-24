@@ -113,7 +113,12 @@ void OBISComponent::handle_line(char *line) {
 
   for (const auto &channel : this->channels_) {
     if (!channel.first.compare(field)) {
-      ESP_LOGD(TAG, "Found configured field '%s' with value '%s' and unit '%s'", line, value, unit);
+      ESP_LOGD(
+        TAG, 
+        "Found configured field '%s' with value '%s' and unit '%s'",
+        line,
+        value,
+        unit);
       if (channel.second->get_unit_of_measurement().compare(unit)) {
         ESP_LOGW(
           TAG,
