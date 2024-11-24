@@ -54,6 +54,8 @@ void OBISComponent::loop() {
     this->buf[this->index] = (char) byte;
     this->index++;
 
+    ESP_LOGD(TAG, "Received char: '%c'", byte);
+
     if (byte == '\n') {
       this->buf[this->index - 1] = '\0';
 
